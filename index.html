@@ -760,6 +760,10 @@
       max-width: 620px;
     }
 
+    .mobile-cv-footer {
+      display: none;
+    }
+
     .signature {
       color: var(--accent);
       font-family: "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
@@ -940,6 +944,22 @@
         flex-direction: column;
       }
 
+      .main > .cv-footer {
+        display: none;
+      }
+
+      .mobile-cv-footer {
+        order: 3;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 0;
+        padding: 22px clamp(18px, 5vw, 28px) 26px;
+        border-top: 1px solid var(--line);
+        background: var(--paper);
+      }
+
       .signature-line {
         margin-left: 0;
       }
@@ -956,6 +976,10 @@
 
       .aside {
         padding: 22px 14px 26px;
+      }
+
+      .mobile-cv-footer {
+        padding: 20px 14px 24px;
       }
 
       h1 {
@@ -1572,6 +1596,18 @@
         <div class="side-muted">UX design, technology, psychology, travel, tennis, running, board games.</div>
       </section>
     </aside>
+
+    <footer class="cv-footer mobile-cv-footer">
+      <div class="footer-note">
+        <div class="consent">
+          I consent to the processing of my personal data included in this CV for the purposes necessary to carry out the recruitment process in accordance with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 (GDPR).
+        </div>
+      </div>
+      <div>
+        <div class="signature">Joanna Mućka</div>
+        <div class="signature-line"></div>
+      </div>
+    </footer>
   </article>
 
 
