@@ -3,8 +3,8 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joanna Mucka - CV</title>
-  <meta name="description" content="CV Joanna Mucka - QA Engineer, Backend &amp; API Testing, UX/UI Mindset, REST API, Postman, Kibana, RabbitMQ, Playwright, SQL, Jenkins, CI/CD.">
+  <title>Joanna Mućka - CV</title>
+  <meta name="description" content="CV Joanna Mućka - QA Engineer, Backend &amp; API Testing, UX/UI Mindset, REST API, Postman, Kibana, RabbitMQ, Playwright, SQL, Jenkins, CI/CD.">
   <meta name="keywords" content="QA Engineer, Quality Assurance, REST API, Backend Testing, API Testing, Postman, Swagger, JSON, Kibana, RabbitMQ, Playwright, TypeScript, SQL, PostgreSQL, MS SQL Server, Jenkins, CI/CD, Jira, Xray, Confluence, UX/UI Testing, Usability Testing, Agile, Scrum, SAFe">
   <style>
     :root {
@@ -490,6 +490,10 @@
       box-shadow: 0 16px 34px rgba(0, 0, 0, .2);
     }
 
+    .mobile-photo {
+      display: none;
+    }
+
     .side-section {
       margin-top: 20px;
       break-inside: avoid;
@@ -782,33 +786,128 @@
     }
 
     @media (max-width: 900px) {
+      html {
+        font-size: 13px;
+        overflow-x: hidden;
+      }
+
       body {
         padding: 0;
+        background: var(--paper);
+        overflow-x: hidden;
       }
 
       .cv {
-        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
         border: 0;
         border-radius: 0;
+        box-shadow: none;
+        overflow-x: hidden;
       }
 
       .aside {
-        grid-column: 1;
-        grid-row: 1;
+        order: 2;
+        grid-column: auto;
+        grid-row: auto;
+        padding: 24px clamp(18px, 5vw, 28px) 28px;
       }
 
       .main {
-        grid-column: 1;
-        grid-row: 2;
+        order: 1;
+        grid-column: auto;
+        grid-row: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 24px clamp(18px, 5vw, 30px) 22px;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
-      .topline,
+      .topline {
+        order: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .topline::before {
+        display: none;
+      }
+
+      .role {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .mobile-photo {
+        display: block;
+        width: 148px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 24px;
+        border: 1px solid #ead8cb;
+        box-shadow: 0 14px 30px rgba(23, 47, 54, .14);
+      }
+
+      .aside > .photo {
+        display: none;
+      }
+
+      .experience-section {
+        order: 2;
+        margin-top: 20px;
+      }
+
+      .courses-section {
+        order: 3;
+      }
+
+      .profile-section {
+        order: 4;
+      }
+
+      .specialization-section {
+        order: 5;
+      }
+
       .job-head,
       .columns,
-      .competency-grid,
-      .focus-grid {
+      .competency-grid {
         grid-template-columns: 1fr;
         display: grid;
+      }
+
+      .focus-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .focus-card {
+        min-height: 104px;
+        padding: 14px 11px;
+        border-radius: 17px;
+      }
+
+      .focus-card::before {
+        inset: 8px;
+        border-radius: 13px;
+      }
+
+      .focus-label {
+        font-size: 1.18rem;
+        margin-bottom: 7px;
+      }
+
+      .focus-text {
+        font-size: .78rem;
+        line-height: 1.32;
       }
 
       .status,
@@ -816,17 +915,102 @@
         justify-self: start;
       }
 
+      ul {
+        padding-left: 16px;
+      }
+
+      li {
+        overflow-wrap: anywhere;
+      }
+
       .availability {
         justify-items: start;
+        justify-self: start;
+        text-align: left;
+      }
+
+      .qr-link,
+      .qr-caption {
+        justify-self: start;
       }
 
       .cv-footer {
+        order: 6;
         align-items: flex-start;
         flex-direction: column;
       }
 
       .signature-line {
         margin-left: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      html {
+        font-size: 12.5px;
+      }
+
+      .main {
+        padding: 18px 14px 20px;
+      }
+
+      .aside {
+        padding: 22px 14px 26px;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 13vw, 3rem);
+      }
+
+      .role {
+        font-size: 1.28rem;
+        line-height: 1.2;
+        max-width: 25ch;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .profile-box {
+        padding: 14px;
+        text-align: left;
+      }
+
+      .focus-grid {
+        gap: 8px;
+      }
+
+      .focus-card {
+        min-height: 90px;
+        padding: 12px 9px;
+        border-radius: 15px;
+      }
+
+      .focus-label {
+        font-size: 1rem;
+      }
+
+      .focus-text {
+        font-size: .72rem;
+        line-height: 1.26;
+      }
+
+      .job {
+        padding: 14px 0;
+      }
+
+      .job-title {
+        font-size: 1.14rem;
+      }
+
+      .photo {
+        display: none;
+      }
+
+      .mobile-photo {
+        width: 132px;
+        border-radius: 20px;
       }
     }
 
@@ -1055,27 +1239,28 @@
   <article class="cv">
     <main class="main">
       <header class="topline">
+        <img class="mobile-photo" src="./index_files/Asia.jpg" alt="Joanna Mućka">
         <div>
-          <h1>Joanna <span>Mucka</span></h1>
-          <div class="role">QA Engineer | Backend &amp; API Testing <br>| UX/UI</br></div>
+          <h1>Joanna <span>Mućka</span></h1>
+          <div class="role">QA Engineer | Backend &amp; API Testing | UX/UI</div>
         </div>
         <div class="availability">
           <div class="status">Available in 1 month</div>
-          <a class="qr-link" href="https://www.linkedin.com/in/joanna-mucka/?locale=en-US" target="_blank" rel="noreferrer" aria-label="Open Joanna Mućka LinkedIn profile">
-            <img class="qr-image" src="./linkedin-qr.svg" alt="QR code to Joanna Mućka LinkedIn profile">
+          <a class="qr-link" href="https://www.linkedin.com/in/joanna-mucka" target="_blank" rel="noreferrer" aria-label="Open Joanna Mućka LinkedIn profile">
+            <img class="qr-image" src="linkedin-qr.svg" alt="QR code to Joanna Mućka LinkedIn profile">
           </a>
           <div class="qr-caption">LinkedIn</div>
         </div>
       </header>
 
-      <section class="section">
+      <section class="section profile-section">
         <h2 class="section-title">Profile</h2>
         <div class="profile-box">
-          QA Engineer with experience in ensuring the quality, stability, and reliability of service-oriented systems. Skilled in REST API testing, log analysis, and validating complex integrations across distributed systems. Experienced in identifying critical defects, analyzing system issues, and supporting development teams throughout the software development lifecycle - from requirements analysis to release and deployment. Focused on improving testing processes, product quality, and system stability. I also pay attention to UX/UI aspects by identifying usability issues and interface inconsistencies affecting the end-user experience. I combine technical problem-solving with business understanding to support reliable and user-focused products.
+          QA Engineer with experience in functional, integration, E2E and UAT testing, data validation and backend issue analysis. I work effectively in environments based on microservices, message queues, system logs, CI/CD and technical documentation. My key strength is combining technical precision with a mature UX/UI perspective and the ability to translate quality risks into business language.
         </div>
       </section>
 
-      <section class="section">
+      <section class="section specialization-section">
         <h2 class="section-title">Specialization</h2>
         <div class="focus-grid">
           <div class="focus-card">
@@ -1097,7 +1282,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section experience-section">
         <h2 class="section-title">Professional Experience</h2>
 
         <article class="job">
@@ -1109,25 +1294,14 @@
             <div class="date">01.2025 - present</div>
           </div>
           <ul>
-            <li>Backend log analysis in <strong>Kibana</strong> and diagnosing issues affecting service stability in collaboration with developers (Slack, Google Meet).</li>
-
-<li>Monitoring inter-service communication via <strong>RabbitMQ</strong> and analyzing backend integrations.</li>
-
-<li>Creating and maintaining test cases, test scenarios, and technical documentation in <strong>Xray</strong>.</li>
-
-<li>Documenting technical functionalities and preparing internal documentation and user guides in <strong>Confluence</strong>.</li>
-
-<li>Reporting and managing defects in <strong>Jira</strong> - bug documentation, prioritization, status tracking, and collaboration within the SDLC.</li>
-
-<li>Performing E2E, functional, backend, and mobile application testing.</li>
-
-<li>Managing CI/CD pipelines in <strong>Jenkins</strong> and analyzing automated test results.</li>
-
-<li>Developing test automation using <strong>Playwright and TypeScript</strong>.</li>
-
-<li>Participating in <strong>UAT (User Acceptance Testing)</strong> - presenting final functionalities to stakeholders, gathering feedback, and approving releases for production deployment.</li>
-
-<li>Supporting product quality from the UX/UI and end-user experience perspective.</li>
+            <li>Testing REST API in Postman: JSON validation, HTTP status codes, token authorization, edge cases and data consistency.</li>
+            <li>Analyzing backend logs in Kibana and diagnosing defects affecting service stability.</li>
+            <li>Monitoring service-to-service communication through RabbitMQ and analyzing backend integrations.</li>
+            <li>Creating and maintaining test cases, scenarios and technical documentation in Xray and Confluence.</li>
+            <li>Executing E2E, functional and UAT tests for frontend, backend and mobile applications.</li>
+            <li>Working with CI/CD pipelines in Jenkins and analyzing automated test results.</li>
+            <li>Developing test automation using Playwright and TypeScript.</li>
+            <li>Supporting product quality from the UX/UI and end-user experience perspective.</li>
           </ul>
           <div class="ats-only">
             Quantified achievement at Trans.eu: contributed to analyzing and maintaining over 100 test cases and regression scenarios for REST API, backend integrations and UAT processes.
@@ -1144,38 +1318,28 @@
             <div class="date">12.2022 - 08.2024</div>
           </div>
           <ul>
-            <li>Designing test strategies for functional, regression, integration, and acceptance testing.</li>
-
-<li>Testing web and mobile applications and analyzing <strong>REST API</strong> completeness and functionality.</li>
-
-<li>Reporting defects in <strong>Jira and YouTrack</strong>, including root cause analysis and proposed solutions.</li>
-
-<li>Data validation and SQL query analysis in <strong>PostgreSQL and MS SQL Server</strong>.</li>
-
-<li>Analyzing frontend issues in <strong>DevTools</strong>: console, cookies, sessions, DOM, and responsiveness.</li>
-
-<li>Performing <strong>UX/UI usability testing</strong> - analyzing interface intuitiveness and ergonomics, and recommending improvements.</li>
-
-<li>Managing versions and code repositories in <strong>GitLab</strong> - monitoring changes, tracking conflicts, and supporting development teams.</li>
-
-<li>Supporting business and operational users and analyzing requests in <strong>ERP and Intense</strong> systems.</li>
-
-<li>Working in a <strong>Scrum environment</strong> - participating in daily meetings, refinements, sprint reviews, and collaborating with developers, analysts, and project managers.</li>
+            <li>Designing test strategies for functional, regression, integration and acceptance testing.</li>
+            <li>Testing web and mobile applications and analyzing REST API completeness.</li>
+            <li>Reporting defects in Jira and YouTrack, including root cause analysis and proposed solutions.</li>
+            <li>Data validation and SQL query analysis in PostgreSQL and MS SQL Server.</li>
+            <li>Analyzing frontend issues in DevTools: console, cookies, sessions, DOM and responsiveness.</li>
+            <li>UX/UI usability testing and recommending improvements for user experience.</li>
+            <li>Supporting business and operational users and analyzing tickets in ERP and Intense systems.</li>
           </ul>
         </article>
 
         <article class="job">
           <div class="job-head">
             <div>
-              <h3 class="job-title">Junior Project Specialist</h3>
+              <h3 class="job-title">Junior Project Implementation Specialist</h3>
               <div class="company">Trigonum</div>
             </div>
             <div class="date">10.2022 - 11.2022</div>
           </div>
           <ul class="compact-list">
-            <li>Creating and updating project documentation compliant with <strong>EU requirements (ERDF, ESF)</strong>, with focus on quality and formal compliance.</li>
+            <li>Creating and updating project documentation compliant with EU requirements (ERDF, ESF), with focus on quality and formal compliance.</li>
             <li>Managing financial settlements, monitoring project costs and analyzing large data sets.</li>
-            <li>Creating <strong>MS Excel</strong> spreadsheets with advanced formulas, logical functions and pivot tables.</li>
+            <li>Creating MS Excel spreadsheets with advanced formulas, logical functions and pivot tables.</li>
           </ul>
         </article>
 
@@ -1188,61 +1352,47 @@
             <div class="date">11.2021 - 10.2022</div>
           </div>
           <ul class="compact-list">
-            <li>Managing full recruitment processes: job postings, application screening, interviews, and candidate feedback.</li>
-
-<li>Organizing onboarding processes, preparing workstations, and supporting the adaptation of new employees.</li>
-
-<li>Creating and optimizing tools for working time analysis and project efficiency tracking.</li>
-
-<li>Supervising medical examinations and health & safety (OHS) training, ensuring compliance with labor law regulations.</li>
-
-<li>Maintaining HR documentation, <strong>PPK records, HR reporting, and handling the Płatnik</strong> system.</li>
-
-<li>Coordinating internship agreements within the "Kariera Jutra" program: documentation, communication with institutions, and process supervision.</li>
+            <li>Managing full recruitment processes: job ads, application screening, interviews and candidate feedback.</li>
+            <li>Organizing onboarding, preparing workstations and supporting new employee adaptation.</li>
+            <li>Creating and optimizing tools for working time analysis and project efficiency tracking.</li>
+            <li>Supervising medical examinations, occupational health and safety training, and labor law compliance.</li>
+            <li>Maintaining HR documentation, PPK registers, HR reporting and operating the Płatnik system.</li>
+            <li>Coordinating internship agreements in the "Kariera Jutra" program: documentation, communication with institutions and process supervision.</li>
           </ul>
         </article>
 
         <article class="job">
           <div class="job-head">
             <div>
-              <h3 class="job-title">Data Protection Specialist</h3>
+              <h3 class="job-title">Personal Data Protection Representative</h3>
               <div class="company">Trigonum</div>
             </div>
             <div class="date">04.2021 - 10.2022</div>
           </div>
           <ul class="compact-list">
-         <li>Developing and implementing solutions compliant with <strong>GDPR</strong> regulations and data protection policies.</li>
-
-<li>Conducting compliance audits and preparing Data Protection Impact Assessments (DPIA).</li>
-
-<li>Creating and maintaining records of processing activities and classifying information assets.</li>
-
-<li>Managing data protection incidents, maintaining breach registers, and cooperating with management boards and supervisory authorities.</li>
-
-<li>Preparing and reviewing data processing agreements in compliance with GDPR requirements.</li>
+            <li>Developing and implementing solutions compliant with GDPR and data protection policies.</li>
+            <li>Conducting compliance audits and preparing Data Protection Impact Assessments (DPIA).</li>
+            <li>Creating and updating records of processing activities and classifying information assets.</li>
+            <li>Managing data protection incidents, breach registers and cooperation with management and supervisory authorities.</li>
+            <li>Preparing and reviewing data processing agreements compliant with GDPR.</li>
           </ul>
         </article>
 
         <article class="job">
           <div class="job-head">
             <div>
-              <h3 class="job-title">Office Manager</h3>
+              <h3 class="job-title">Executive Office Manager</h3>
               <div class="company">Trigonum</div>
             </div>
             <div class="date">10.2019 - 10.2022</div>
           </div>
           <ul class="compact-list">
-           <li>Managing and digitizing financial documentation, coordinating document workflows, and ensuring data consistency.</li>
-
-<li>Working with the <strong>MKsiegowa / ERP system</strong>: data entry, business trip settlements, and integration with office tools.</li>
-
-<li>Optimizing operational processes and implementing improvements in spreadsheets and document workflow systems.</li>
-
-<li>Preparing analyses, cost reports, and operational efficiency reports for management.</li>
-
-<li>Monitoring payments, controlling receivables, and cooperating with debt collection companies.</li>
-
-<li>Supporting promotional and informational activities and participating in meetings with contractors and project partners.</li>
+            <li>Managing and digitizing financial documentation, coordinating document flow and supervising data consistency.</li>
+            <li>Operating the MKsięgowa / ERP system: data entry, business trip settlements and integration with office tools.</li>
+            <li>Optimizing operational processes and implementing improvements in spreadsheets and document workflow systems.</li>
+            <li>Preparing analyses, cost reports and performance reports for the management board.</li>
+            <li>Monitoring payments, controlling receivables and cooperating with debt collection companies.</li>
+            <li>Supporting promotional and information activities and participating in meetings with contractors and project partners.</li>
           </ul>
         </article>
 
@@ -1250,7 +1400,7 @@
           <div class="job-head">
             <div>
               <h3 class="job-title">Additional Administrative and Operational Experience</h3>
-              <div class="company">BoomBit | Rubo-Serwis | District Court in Gdansk | Tru Trussardi</div>
+              <div class="company">BoomBit | Rubo-Serwis | District Court in Gdańsk | Tru Trussardi</div>
             </div>
             <div class="date">08.2017 - 08.2019</div>
           </div>
@@ -1260,19 +1410,18 @@
         </article>
       </section>
 
-      <section class="section">
+      <section class="section courses-section">
         <h2 class="section-title">Courses and Certifications</h2>
         <div class="panel">
           <ul class="compact-list">
             <li>SAFe 6 AI-Empowered Product Owner/Product Manager (POPM) - Scaled Agile, 09.2025</li>
             <li>Google UX Design - Google, 08.2025</li>
-            <li>Interaction Designer Course - Design Practice PL, 01.2024 - 04.2024</li>
-            <li>Figma Course - SKVOT Polska, 10.2023 - 11.2023</li>
-             <li>Full Stack UX/UI Designer - AkademiaUXUI.pl, 09.2022 - 03.2023</li>
-             <li>English Course - Talkersi.pl, 02.2022 - 07.2022</li>
-           <li>"Become a Tester" Course - Sii, 06.2022 - 07.2022</li>
+            <li>Full Stack UX/UI Designer - AkademiaUXUI.pl, 09.2022-03.2023</li>
+            <li>Interaction Designer Course - Design Practice PL, 01.2024-04.2024</li>
+            <li>Advanced Figma Course - SKVOT Polska, 10.2023-11.2023</li>
+            <li>"Become a Tester" Course - Sii, 06.2022-07.2022</li>
             <li>Quality Management System Certificate - Opus Polska, 03.2022</li>
-            <li>Data Protection Officer Course - Lex Artist, 03.2021 - 04.2021</li>
+            <li>Data Protection Officer Course - Lex Artist, 03.2021-04.2021</li>
           </ul>
         </div>
       </section>
@@ -1284,14 +1433,14 @@
           </div>
         </div>
         <div>
-          <div class="signature">Joanna Mucka</div>
+          <div class="signature">Joanna Mućka</div>
           <div class="signature-line"></div>
         </div>
       </footer>
     </main>
 
     <aside class="aside">
-      <img class="photo" src="./asia.png" alt="Joanna Mućka">
+      <img class="photo" src="asia.png" alt="Joanna Mućka">
 
       <section class="side-section">
         <h2 class="side-title">Contact</h2>
@@ -1304,9 +1453,9 @@
             <span class="contact-icon">T</span>
             <span class="contact-text">+48 661 756 916</span>
           </a>
-          <a class="contact-place" href="https://www.google.com/maps/search/?api=1&amp;query=Gda%C5%84sk" target="_blank" rel="noreferrer" aria-label="Open Gdansk location in maps">
+          <a class="contact-place" href="https://www.google.com/maps/search/?api=1&amp;query=Gda%C5%84sk" target="_blank" rel="noreferrer" aria-label="Open Gdańsk location in maps">
             <span class="contact-icon">G</span>
-            <span class="contact-text">Gdansk | remote / hybrid</span>
+            <span class="contact-text">Gdańsk | remote / hybrid</span>
           </a>
         </div>
       </section>
@@ -1353,15 +1502,11 @@
         </div>
         <div class="skill-block">
           <strong>Databases</strong>
-          <div class="side-muted">PostgreSQL, pgAdmin, MS SQL Server</div>
+          <div class="side-muted">PostgreSQL, pgAdmin, MS SQL Server, SSMS</div>
         </div>
         <div class="skill-block">
           <strong>UX / UI</strong>
-          <div class="side-muted">Figma, UX research, usability testing, Webflow, Adobe Photoshop, Adobe After Effects</div>
-        </div>
-           <div class="skill-block">
-          <strong>Team communication</strong>
-          <div class="side-muted">Slack, Google Workspace</div>
+          <div class="side-muted">Figma, UX research, usability testing, Webflow, design systems</div>
         </div>
       </section>
 
@@ -1403,10 +1548,10 @@
       <section class="side-section education-print-section">
         <h2 class="side-title">Education and Activities</h2>
         <div class="side-list">
-          <div><strong>University of Gdansk</strong><br>Master's degree, Criminology<br>2015-2017</div>
-          <div><strong>University of Gdansk</strong><br>Master's degree, National Security<br>2015-2017</div>
-          <div><strong>University of Gdansk</strong><br>Bachelor's degree, Administration<br>2012-2015</div>
-          <div>Member of the Disciplinary Committee, Scholarship Committee and Faculty Council at the University of Gdansk.</div>
+          <div><strong>University of Gdańsk</strong><br>Master's degree, Criminology<br>2015-2017</div>
+          <div><strong>University of Gdańsk</strong><br>Master's degree, National Security<br>2015-2017</div>
+          <div><strong>University of Gdańsk</strong><br>Bachelor's degree, Administration<br>2012-2015</div>
+          <div>Member of the Disciplinary Committee, Scholarship Committee and Faculty Council at the University of Gdańsk.</div>
         </div>
       </section>
 
