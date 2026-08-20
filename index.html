@@ -3158,8 +3158,6 @@
   }
 }
 </style>
-
-
 <style id="mobile-menu-final-fix-v3">
 /* MOBILE MENU ONLY — no desktop, content or print changes */
 @media screen and (max-width: 900px) {
@@ -3440,9 +3438,40 @@
   .jmk-mobile-nav{display:none !important;}
 }
 </style>
+
+<style id="landscape-menu-no-arrows-final">
+/* ONLY mobile landscape: hide left/right arrows.
+   Portrait mobile keeps them exactly as before.
+   Desktop / print / PDF unchanged. */
+@media screen and (min-width:640px) and (max-width:900px) and (orientation:landscape){
+  .jmk-nav-controls{
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:0 !important;
+  }
+
+  .jmk-nav-prev,
+  .jmk-nav-next{
+    display:none !important;
+  }
+
+  .jmk-nav-viewport{
+    grid-column:1 !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .jmk-nav-links{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    touch-action:pan-x !important;
+  }
+}
+</style>
 </head>
 <body>
-
 <div aria-label="CV mobile navigation" class="mobile-ux-nav jmk-mobile-nav">
 <div class="jmk-nav-head">
 <a aria-label="Joanna Mućka" class="jmk-nav-brand" href="#cv-top">
@@ -3468,7 +3497,6 @@
 <button aria-label="Next CV sections" class="jmk-nav-arrow jmk-nav-next" type="button">›</button>
 </div>
 </div>
-
 <article class="cv">
 <main class="main">
 <header class="topline" id="cv-top">
@@ -3796,7 +3824,6 @@
 </div>
 </footer>
 </article>
-
 <script id="mobile-menu-scroll-js">
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.jmk-mobile-nav').forEach(function(nav){
